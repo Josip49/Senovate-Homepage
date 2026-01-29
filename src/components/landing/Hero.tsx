@@ -54,7 +54,7 @@ const Hero = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap gap-6 mt-12 pt-8 border-t border-border/50 opacity-0 animate-fade-up animation-delay-400">
+            <div className="flex flex-wrap gap-6 mt-12 mb-24 md:mb-0 pt-8 border-t border-border/50 opacity-0 animate-fade-up animation-delay-400">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-accent" />
                 <span className="text-sm text-muted-foreground">Keine Vorkasse</span>
