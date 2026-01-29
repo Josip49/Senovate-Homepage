@@ -20,7 +20,7 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission (no backend configured)
+    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -39,94 +39,103 @@ const Contact = () => {
   };
 
   return (
-    <section id="kontakt" className="section-padding bg-secondary/50">
-      <div className="container-narrow">
+    <section id="kontakt" className="section-padding relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 dots-pattern opacity-20" />
+
+      <div className="container-narrow relative z-10">
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+          <p className="tagline mb-4">Kontakt</p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Dein Anfang
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Lass uns über dein Projekt sprechen. Wir freuen uns auf dich.
+          </p>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Column - Info */}
-          <div>
-            <span className="text-sm font-medium text-accent uppercase tracking-wider">
-              Kontakt
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-              Lassen Sie uns über Ihr Projekt sprechen
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              Vereinbaren Sie jetzt Ihr kostenloses Erstgespräch. Wir freuen uns
-              darauf, Sie und Ihre Ideen kennenzulernen.
-            </p>
-
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-medium text-foreground mb-1">E-Mail</h3>
-                  {/* TODO: Replace placeholder with actual email */}
-                  <a
-                    href="mailto:[PLATZHALTER@email.de]"
-                    className="text-muted-foreground hover:text-accent transition-colors"
-                  >
-                    [PLATZHALTER@email.de]
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
+          {/* Left Column - Contact Info */}
+          <div className="space-y-8">
+            {/* Contact Cards */}
+            <div className="space-y-4">
+              <div className="bg-card rounded-2xl p-6 shadow-sm border border-border/30 flex items-start gap-5 hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5 text-accent" />
                 </div>
                 <div>
                   <h3 className="font-medium text-foreground mb-1">Telefon</h3>
-                  {/* TODO: Replace placeholder with actual phone */}
                   <a
-                    href="tel:[PLATZHALTER]"
-                    className="text-muted-foreground hover:text-accent transition-colors"
+                    href="tel:+491602231994"
+                    className="text-muted-foreground hover:text-accent transition-colors text-lg"
                   >
-                    [PLATZHALTER]
+                    +49 160 2231994
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="bg-card rounded-2xl p-6 shadow-sm border border-border/30 flex items-start gap-5 hover:shadow-md transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground mb-1">E-Mail</h3>
+                  <a
+                    href="mailto:info@senovate.de"
+                    className="text-muted-foreground hover:text-accent transition-colors text-lg"
+                  >
+                    info@senovate.de
+                  </a>
+                </div>
+              </div>
+
+              <div className="bg-card rounded-2xl p-6 shadow-sm border border-border/30 flex items-start gap-5 hover:shadow-md transition-shadow">
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-accent" />
                 </div>
                 <div>
                   <h3 className="font-medium text-foreground mb-1">Standort</h3>
-                  {/* TODO: Replace placeholder with actual location */}
-                  <p className="text-muted-foreground">[PLATZHALTER Ort, Deutschland]</p>
+                  <p className="text-muted-foreground text-lg">
+                    Bahnhofsstrasse 2a, Nürnberg
+                  </p>
                 </div>
               </div>
+            </div>
+
+            {/* Founder Info */}
+            <div className="bg-secondary/50 rounded-2xl p-6">
+              <p className="text-sm text-muted-foreground mb-2">Ihr Ansprechpartner</p>
+              <p className="font-serif text-xl font-semibold text-foreground">Secgin Özdösemeci</p>
+              <p className="text-muted-foreground">Co-Founder</p>
             </div>
           </div>
 
           {/* Right Column - Form */}
-          <div className="bg-card rounded-3xl p-6 md:p-8 shadow-premium">
+          <div className="bg-card rounded-3xl p-8 shadow-sm border border-border/30">
             {isSubmitted ? (
               <div className="text-center py-12">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle2 className="w-8 h-8 text-accent" />
+                <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle2 className="w-10 h-10 text-accent" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-2">
+                <h3 className="font-serif text-2xl font-bold text-foreground mb-3">
                   Vielen Dank!
                 </h3>
-                <p className="text-muted-foreground mb-6">
-                  Ihre Nachricht wurde gesendet. Wir melden uns in Kürze bei Ihnen.
+                <p className="text-muted-foreground mb-8">
+                  Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.
                 </p>
                 <Button variant="outline" onClick={() => setIsSubmitted(false)}>
                   Neue Nachricht senden
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
                     className="block text-sm font-medium text-foreground mb-2"
                   >
-                    Name *
+                    Name
                   </label>
                   <Input
                     id="name"
@@ -135,7 +144,7 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Ihr vollständiger Name"
                     required
-                    className="bg-background"
+                    className="bg-background/50"
                   />
                 </div>
 
@@ -144,7 +153,7 @@ const Contact = () => {
                     htmlFor="email"
                     className="block text-sm font-medium text-foreground mb-2"
                   >
-                    E-Mail *
+                    E-Mail
                   </label>
                   <Input
                     id="email"
@@ -154,7 +163,7 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="ihre@email.de"
                     required
-                    className="bg-background"
+                    className="bg-background/50"
                   />
                 </div>
 
@@ -172,7 +181,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+49 123 456789"
-                    className="bg-background"
+                    className="bg-background/50"
                   />
                 </div>
 
@@ -181,7 +190,7 @@ const Contact = () => {
                     htmlFor="message"
                     className="block text-sm font-medium text-foreground mb-2"
                   >
-                    Nachricht *
+                    Nachricht
                   </label>
                   <Textarea
                     id="message"
@@ -191,7 +200,7 @@ const Contact = () => {
                     placeholder="Erzählen Sie uns von Ihrem Projekt..."
                     rows={4}
                     required
-                    className="bg-background resize-none"
+                    className="bg-background/50 resize-none"
                   />
                 </div>
 

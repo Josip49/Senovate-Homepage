@@ -29,33 +29,26 @@ const faqs = [
   {
     question: "Muss ich technisches Wissen mitbringen?",
     answer:
-      "Nein, überhaupt nicht. Wir kümmern uns um alle technischen Aspekte. Sie liefern uns Ihre Inhalte (Texte, Bilder, Logo), und wir machen den Rest. Für Änderungen können Sie den Support nutzen.",
+      "Nein, überhaupt nicht. Wir kümmern uns um alle technischen Aspekte. Sie liefern uns Ihre Inhalte (Texte, Bilder, Logo), und wir machen den Rest.",
   },
   {
     question: "Ist meine Website auch für Suchmaschinen optimiert?",
     answer:
-      "Ja, alle unsere Websites werden mit SEO-Grundlagen erstellt: schnelle Ladezeiten, mobile Optimierung, Meta-Tags und strukturierte Daten. Premium-SEO-Pakete beinhalten erweiterte Optimierungen.",
-  },
-  {
-    question: "Welche Zahlungsmethoden akzeptieren Sie?",
-    answer:
-      "Wir akzeptieren Überweisung und SEPA-Lastschrift. Die Einrichtungsgebühr wird nach Fertigstellung fällig, die monatliche Gebühr per Lastschrift eingezogen.",
+      "Ja, alle unsere Websites werden mit SEO-Grundlagen erstellt: schnelle Ladezeiten, mobile Optimierung, Meta-Tags und strukturierte Daten.",
   },
 ];
 
 const FAQ = () => {
   return (
-    <section id="faq" className="section-padding">
+    <section id="faq" className="section-padding bg-secondary/30">
       <div className="container-narrow">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-sm font-medium text-accent uppercase tracking-wider">
-            FAQ
-          </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+          <p className="tagline mb-4">FAQ</p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Häufig gestellte Fragen
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-lg text-muted-foreground">
             Hier finden Sie Antworten auf die wichtigsten Fragen.
           </p>
         </div>
@@ -67,12 +60,12 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card rounded-2xl px-6 shadow-premium border-none"
+                className="bg-card rounded-2xl px-6 md:px-8 shadow-sm border border-border/30 data-[state=open]:shadow-md transition-shadow"
               >
-                <AccordionTrigger className="text-left font-serif text-lg font-medium text-foreground hover:no-underline py-5">
+                <AccordionTrigger className="text-left font-serif text-lg font-medium text-foreground hover:no-underline py-6 [&[data-state=open]>svg]:rotate-180">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

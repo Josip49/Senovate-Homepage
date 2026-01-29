@@ -4,12 +4,12 @@ const services = [
   {
     icon: Globe,
     title: "Webdesign & Entwicklung",
-    description: "Moderne, professionelle Websites, die Ihre Marke perfekt repräsentieren und Besucher zu Kunden machen.",
+    description: "Moderne, professionelle Websites, die Ihre Marke repräsentieren und Besucher zu Kunden machen.",
   },
   {
     icon: Palette,
     title: "Individuelles Design",
-    description: "Kein Template von der Stange. Wir gestalten Ihre Website passend zu Ihrer Unternehmensidentität.",
+    description: "Kein Template von der Stange – wir gestalten passend zu Ihrer Unternehmensidentität.",
   },
   {
     icon: Smartphone,
@@ -19,7 +19,7 @@ const services = [
   {
     icon: Zap,
     title: "Schnelle Ladezeiten",
-    description: "Performance-optimierte Websites für beste Nutzererfahrung und besseres Google-Ranking.",
+    description: "Performance-optimiert für beste Nutzererfahrung und besseres Google-Ranking.",
   },
   {
     icon: Shield,
@@ -35,32 +35,36 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="leistungen" className="section-padding bg-secondary/50">
-      <div className="container-narrow">
+    <section id="leistungen" className="section-padding relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 dots-pattern opacity-20" />
+
+      <div className="container-narrow relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sm font-medium text-accent uppercase tracking-wider">
-            Leistungen
-          </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-            Alles, was Sie für Ihren Webauftritt brauchen
+        <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
+          <p className="tagline mb-4">Leistungen</p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Alles für Ihren Webauftritt
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-lg text-muted-foreground">
             Von der ersten Idee bis zur fertigen Website – wir kümmern uns um alles.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="card-premium group"
+              className="group bg-card rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-2 border border-border/30"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors">
-                <service.icon className="w-6 h-6 text-accent" />
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-accent/10 group-hover:scale-110 transition-all duration-300">
+                <service.icon className="w-7 h-7 text-foreground group-hover:text-accent transition-colors" />
               </div>
+
+              {/* Content */}
               <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
                 {service.title}
               </h3>
