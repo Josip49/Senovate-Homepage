@@ -62,8 +62,12 @@ const Pricing = () => {
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Transparente Preise
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground mb-4">
             Wähle das passende Paket für dein Unternehmen.
+          </p>
+          <p className="text-base text-muted-foreground bg-secondary/50 rounded-2xl px-6 py-4 inline-block">
+            Wir sind nicht die Agentur, die 5.000–10.000 € für eine Homepage verlangt.<br />
+            <span className="font-medium text-foreground">Wir wollen fair sein – und liefern trotzdem Qualität.</span>
           </p>
         </div>
 
