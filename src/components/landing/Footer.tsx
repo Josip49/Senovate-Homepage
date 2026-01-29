@@ -2,7 +2,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-foreground text-primary-foreground">
+    <footer className="bg-foreground text-primary-foreground isolate transform-gpu will-change-transform">
       <div className="container-narrow px-4 md:px-8">
         {/* Main Footer */}
         <div className="py-16 grid md:grid-cols-4 gap-10">
