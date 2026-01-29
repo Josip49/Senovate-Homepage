@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, X, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const plans = [
@@ -6,80 +6,72 @@ const plans = [
     name: "Bronze",
     price: "49",
     tier: "bronze",
-    description: "Perfekt für den Einstieg",
+    tagline: "Dein kleines digitales Schaufenster.",
     features: [
-      "1-Seiten-Website (OnePager)",
-      "Responsives Design",
-      "Kontaktformular",
-      "SSL-Zertifikat",
-      "Basis-SEO",
-      "1 Korrekturschleife",
+      { text: "One-Pager", included: true },
+      { text: "keine Unterseiten", included: false },
+      { text: "Visitenkarten", included: false },
+      { text: "Social-Media Button", included: false },
+      { text: "Responsives Design", included: true },
+      { text: "SSL-Zertifikat", included: true },
     ],
-    cta: "Paket wählen",
     popular: false,
   },
   {
     name: "Silber",
     price: "79",
     tier: "silver",
-    description: "Unser beliebtestes Paket",
+    tagline: "Für alle, denen Bronze nicht genug ist.",
     features: [
-      "Bis zu 5 Unterseiten",
-      "Responsives Design",
-      "Kontaktformular",
-      "SSL-Zertifikat",
-      "Erweitertes SEO",
-      "2 Korrekturschleifen",
-      "Google Maps Integration",
-      "Social Media Verlinkung",
+      { text: "bis zu 2 Unterseiten", included: true },
+      { text: "Social-Media-Seiten", included: true },
+      { text: "Mehr Reichweite", included: true },
+      { text: "Social-Media Button", included: true },
+      { text: "Visitenkarten", included: false },
+      { text: "SSL-Zertifikat", included: true },
     ],
-    cta: "Paket wählen",
-    popular: true,
+    popular: false,
   },
   {
     name: "Gold",
     price: "99",
     tier: "gold",
-    description: "Für maximale Wirkung",
+    tagline: "Für dich, wenn du online überzeugen willst.",
     features: [
-      "Bis zu 10 Unterseiten",
-      "Premium responsives Design",
-      "Erweiterte Formulare",
-      "SSL-Zertifikat",
-      "Premium SEO-Paket",
-      "3 Korrekturschleifen",
-      "Google Maps Integration",
-      "Social Media Verlinkung",
-      "Blog-Funktion",
-      "Bildergalerie",
+      { text: "bis zu 4 Unterseiten", included: true },
+      { text: "Visitenkarten", included: true },
+      { text: "Social-Media-Button", included: true },
+      { text: "Mehr Reichweite", included: true },
+      { text: "Fotos von deinem Unternehmen", included: true },
+      { text: "Premium Support", included: true },
     ],
-    cta: "Paket wählen",
-    popular: false,
+    popular: true,
   },
 ];
 
 const Pricing = () => {
   return (
-    <section id="preise" className="section-padding bg-secondary/50">
-      <div className="container-narrow">
+    <section id="preise" className="section-padding relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 dots-pattern opacity-20" />
+
+      <div className="container-narrow relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <span className="text-sm font-medium text-accent uppercase tracking-wider">
-            Preise
-          </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-            Transparente Preise, keine Überraschungen
+          <p className="tagline mb-4">Preise</p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Transparente Preise
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Wählen Sie das passende Paket für Ihr Unternehmen.
+          <p className="text-lg text-muted-foreground">
+            Wähle das passende Paket für dein Unternehmen.
           </p>
         </div>
 
         {/* Setup Fee Notice */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-card px-6 py-3 rounded-full shadow-premium">
-            <span className="text-muted-foreground">Einmalige Einrichtung:</span>
-            <span className="font-semibold text-foreground">199 €</span>
+          <div className="inline-flex items-center gap-3 bg-card px-6 py-4 rounded-full shadow-sm border border-border/50">
+            <span className="text-muted-foreground">Einrichtung:</span>
+            <span className="font-serif text-xl font-bold text-foreground">einmalig 199€</span>
           </div>
         </div>
 
@@ -88,93 +80,102 @@ const Pricing = () => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative bg-card rounded-3xl p-8 shadow-premium transition-all duration-300 hover:shadow-premium-hover ${
-                plan.popular ? "ring-2 ring-accent scale-105 md:scale-110" : ""
+              className={`relative rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 ${
+                plan.popular ? "md:scale-105 z-10" : ""
               }`}
             >
-              {/* Popular Badge */}
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
-                  Beliebt
-                </div>
-              )}
-
-              {/* Tier Icon */}
-              <div
-                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
+              {/* Card Background */}
+              <div 
+                className={`h-full flex flex-col ${
                   plan.tier === "bronze"
-                    ? "bg-bronze-bg"
+                    ? "bg-gradient-to-b from-bronze-bg via-bronze-bg to-bronze-card/40"
                     : plan.tier === "silver"
-                    ? "bg-silver-bg"
-                    : "bg-gold-bg"
+                    ? "bg-gradient-to-b from-silver-bg via-silver-bg to-silver-card/50"
+                    : "bg-gradient-to-b from-gold-bg via-gold-bg to-gold-card/50"
                 }`}
               >
-                <div
-                  className={`w-6 h-6 rounded-full ${
+                {/* Popular Badge */}
+                {plan.popular && (
+                  <div className="absolute top-6 right-6">
+                    <Heart className="w-8 h-8 text-gold fill-gold" />
+                  </div>
+                )}
+
+                {/* Card Content */}
+                <div className="p-8 flex-grow">
+                  {/* Plan Name */}
+                  <h3 className="font-serif text-3xl font-bold text-foreground mb-2">
+                    {plan.name}
+                  </h3>
+                  
+                  {/* Tagline */}
+                  <p className="text-sm text-muted-foreground mb-8 min-h-[40px]">
+                    {plan.tagline}
+                  </p>
+
+                  {/* Features */}
+                  <ul className="space-y-4 mb-8">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        {feature.included ? (
+                          <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                        ) : (
+                          <X className="w-5 h-5 text-destructive/70 flex-shrink-0 mt-0.5" />
+                        )}
+                        <span className={`text-sm ${feature.included ? "text-foreground" : "text-muted-foreground"}`}>
+                          {feature.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Price Footer */}
+                <div 
+                  className={`px-8 py-6 ${
                     plan.tier === "bronze"
-                      ? "bg-bronze"
+                      ? "bg-bronze-card"
                       : plan.tier === "silver"
-                      ? "bg-silver"
-                      : "bg-gold"
+                      ? "bg-silver-card"
+                      : "bg-gold-card"
                   }`}
-                />
+                >
+                  <div className="flex items-baseline justify-between">
+                    <span className="font-serif text-4xl font-bold text-foreground">
+                      {plan.price}€
+                    </span>
+                    <span className="text-foreground/80 font-medium">/mtl.</span>
+                  </div>
+                </div>
               </div>
-
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-1">
-                {plan.name}
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                {plan.description}
-              </p>
-
-              {/* Price */}
-              <div className="flex items-baseline gap-1 mb-6">
-                <span className="font-serif text-4xl font-bold text-foreground">
-                  {plan.price} €
-                </span>
-                <span className="text-muted-foreground">/Monat</span>
-              </div>
-
-              {/* Features */}
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm">
-                    <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
-              <Button
-                asChild
-                variant={plan.popular ? "default" : "outline"}
-                className="w-full"
-                size="lg"
-              >
-                <a href="#kontakt">{plan.cta}</a>
-              </Button>
             </div>
           ))}
         </div>
 
         {/* Support Add-on */}
-        <div className="bg-card rounded-2xl p-6 md:p-8 shadow-premium max-w-2xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="bg-card rounded-3xl p-8 shadow-sm border border-border/30 max-w-2xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+              <h3 className="font-serif text-2xl font-semibold text-foreground mb-2">
                 Optional: Monatlicher Support
               </h3>
               <p className="text-muted-foreground">
                 1 Update pro Monat inklusive (Text, Bilder, kleine Anpassungen)
               </p>
             </div>
-            <div className="text-right">
-              <div className="font-serif text-3xl font-bold text-foreground">
-                8 €<span className="text-lg font-normal text-muted-foreground">/Monat</span>
+            <div className="text-center md:text-right">
+              <div className="font-serif text-4xl font-bold text-foreground">
+                8€<span className="text-lg font-normal text-muted-foreground">/Monat</span>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Bottom Tagline */}
+        <div className="flex justify-center gap-8 md:gap-16 mt-16 text-sm font-medium text-muted-foreground">
+          <span>Egal wann.</span>
+          <span>Immer sichtbar.</span>
+          <span>Egal wo.</span>
         </div>
       </div>
     </section>
