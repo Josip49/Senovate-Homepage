@@ -69,9 +69,12 @@ const Pricing = () => {
 
         {/* Setup Fee Notice */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 bg-card px-6 py-4 rounded-full shadow-sm border border-border/50">
-            <span className="text-muted-foreground">Einrichtung:</span>
-            <span className="font-serif text-xl font-bold text-foreground">einmalig 199€</span>
+          <div className="inline-flex flex-col items-center gap-2 bg-card px-6 py-4 rounded-2xl shadow-sm border border-border/50">
+            <div className="flex items-center gap-3">
+              <span className="text-muted-foreground">Einrichtung:</span>
+              <span className="font-serif text-xl font-bold text-foreground">einmalig 199€</span>
+            </div>
+            <span className="text-sm text-muted-foreground">Alle Preise verstehen sich netto zzgl. MwSt.</span>
           </div>
         </div>
 
