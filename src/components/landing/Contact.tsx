@@ -69,8 +69,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-medium text-foreground mb-1">Telefon</h3>
-                  <a href="tel:+491602231994" className="text-muted-foreground hover:text-accent transition-colors text-lg">
-                    +49 160 2231994
+                  <a href="tel:+4915207493245" className="text-muted-foreground hover:text-accent transition-colors text-lg">
+                    +49 1520 7493245
                   </a>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const Contact = () => {
             {/* Founder Info */}
             <div className="bg-secondary/50 rounded-2xl p-6">
               <p className="text-sm text-muted-foreground mb-2">Dein Ansprechpartner</p>
-              <p className="font-serif text-xl font-semibold text-foreground">Max Mustermann </p>
+              <p className="font-serif text-xl font-semibold text-foreground">Egzon Ramadani</p>
               <p className="text-muted-foreground">Co-Founder</p>
             </div>
           </div>

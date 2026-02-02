@@ -48,14 +48,14 @@ const Datenschutz = () => {
                   Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
                 </p>
                 <p>
-                  Secgin Özdösemeci<br />
+                  Egzon Ramadani<br />
                   Senovate – Website nach Wunsch<br />
                   [PLATZHALTER: Straße und Hausnummer]<br />
                   [PLATZHALTER: PLZ] Nürnberg<br />
                   Deutschland
                 </p>
                 <p>
-                  Telefon: +49 160 2231994<br />
+                  Telefon: +49 1520 7493245<br />
                   E-Mail: info@senovate.de
                 </p>
                 <p>

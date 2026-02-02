@@ -30,7 +30,7 @@ const AGB = () => {
                 </h2>
                 <p>
                   (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen 
-                  Secgin Özdösemeci, handelnd unter „Senovate – Website nach Wunsch" (nachfolgend 
+                  Egzon Ramadani, handelnd unter „Senovate – Website nach Wunsch" (nachfolgend 
                   „Anbieter") und dem Kunden (nachfolgend „Auftraggeber") über die Erstellung, Gestaltung 
                   und Pflege von Websites sowie damit verbundene Dienstleistungen.
                 </p>
