@@ -33,18 +33,11 @@ const Header = () => {
       <div className="container-narrow flex items-center justify-between px-4 md:px-8">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 flex items-center justify-center">
-            {/* Monitor Icon */}
-            <svg viewBox="0 0 40 40" className="w-10 h-10" fill="none">
-              <rect x="4" y="6" width="32" height="22" rx="3" stroke="currentColor" strokeWidth="2.5" className="text-foreground" />
-              <path d="M16 28h8v4H16z" fill="currentColor" className="text-foreground" />
-              <path d="M12 32h16" stroke="currentColor" strokeWidth="2.5" className="text-foreground" strokeLinecap="round" />
-              <path d="M13 15l4 4-4 4M22 15l4 4-4 4" stroke="currentColor" strokeWidth="2" className="text-accent" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-          <span className="font-serif text-2xl font-bold text-foreground tracking-tight">
-            Senovate
-          </span>
+          <img 
+            src="/src/assets/logo.jpg" 
+            alt="Senovate Logo" 
+            className="h-10 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Navigation */}
