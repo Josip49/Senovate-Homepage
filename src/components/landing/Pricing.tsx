@@ -10,7 +10,6 @@ const plans = [
     features: [
       { text: "One-Pager", included: true },
       { text: "keine Unterseiten", included: false },
-      { text: "Visitenkarten", included: false },
       { text: "Social-Media Button", included: false },
       { text: "Responsives Design", included: true },
       { text: "SSL-Zertifikat", included: true },
@@ -24,10 +23,8 @@ const plans = [
     tagline: "Für alle, denen Bronze nicht genug ist.",
     features: [
       { text: "bis zu 2 Unterseiten", included: true },
-      { text: "Social-Media-Seiten", included: true },
       { text: "Mehr Reichweite", included: true },
       { text: "Social-Media Button", included: true },
-      { text: "Visitenkarten", included: false },
       { text: "SSL-Zertifikat", included: true },
     ],
     popular: false,
@@ -39,7 +36,6 @@ const plans = [
     tagline: "Für dich, wenn du online überzeugen willst.",
     features: [
       { text: "bis zu 4 Unterseiten", included: true },
-      { text: "Visitenkarten", included: true },
       { text: "Social-Media-Button", included: true },
       { text: "Mehr Reichweite", included: true },
       { text: "Fotos von deinem Unternehmen", included: true },
