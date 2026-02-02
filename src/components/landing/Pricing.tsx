@@ -9,8 +9,6 @@ const plans = [
     tagline: "Dein kleines digitales Schaufenster.",
     features: [
       { text: "One-Pager", included: true },
-      { text: "keine Unterseiten", included: false },
-      { text: "Social-Media Button", included: false },
       { text: "Responsives Design", included: true },
       { text: "SSL-Zertifikat", included: true },
     ],
