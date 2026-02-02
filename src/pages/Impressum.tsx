@@ -29,7 +29,7 @@ const Impressum = () => {
                   Angaben gemäß § 5 TMG
                 </h2>
                 <p>
-                  Secgin Özdösemeci<br />
+                  Egzon Ramadani<br />
                   Senovate – Website nach Wunsch<br />
                   [PLATZHALTER: Straße und Hausnummer]<br />
                   [PLATZHALTER: PLZ] Nürnberg<br />
@@ -42,7 +42,7 @@ const Impressum = () => {
                   Kontakt
                 </h2>
                 <p>
-                  Telefon: +49 160 2231994<br />
+                  Telefon: +49 1520 7493245<br />
                   E-Mail: info@senovate.de
                 </p>
               </section>
@@ -62,7 +62,7 @@ const Impressum = () => {
                   Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
                 </h2>
                 <p>
-                  Secgin Özdösemeci<br />
+                  Egzon Ramadani<br />
                   [PLATZHALTER: Straße und Hausnummer]<br />
                   [PLATZHALTER: PLZ] Nürnberg
                 </p>
