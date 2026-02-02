@@ -5,28 +5,28 @@ const steps = [
     icon: MessageSquare,
     number: "01",
     title: "Erstgespräch",
-    description: "Wir lernen Sie und Ihr Unternehmen kennen. Gemeinsam definieren wir Ziele und Wünsche.",
+    description: "Wir lernen dich und dein Unternehmen kennen. Gemeinsam definieren wir Ziele und Wünsche.",
     color: "bg-gold/20 text-gold",
   },
   {
     icon: PenTool,
     number: "02",
     title: "Konzept & Design",
-    description: "Wir erstellen ein maßgeschneidertes Designkonzept. Sie geben Feedback, wir optimieren.",
+    description: "Wir erstellen ein maßgeschneidertes Designkonzept. Du gibst Feedback, wir optimieren.",
     color: "bg-silver/20 text-silver",
   },
   {
     icon: Code2,
     number: "03",
     title: "Entwicklung",
-    description: "Ihr Design wird zum Leben erweckt. Responsive, schnell und SEO-optimiert.",
+    description: "Dein Design wird zum Leben erweckt. Responsive, schnell und SEO-optimiert.",
     color: "bg-bronze/20 text-bronze",
   },
   {
     icon: Rocket,
     number: "04",
     title: "Launch & Support",
-    description: "Ihre Website geht live. Wir stehen auch danach für Fragen zur Verfügung.",
+    description: "Deine Website geht live. Wir stehen auch danach für Fragen zur Verfügung.",
     color: "bg-accent/20 text-accent",
   },
 ];
@@ -39,10 +39,10 @@ const Process = () => {
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
           <p className="tagline mb-4">Ablauf</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            In 4 Schritten zu Ihrer Website
+            In 4 Schritten zu deiner Website
           </h2>
           <p className="text-lg text-muted-foreground">
-            Ein klarer, transparenter Prozess – damit Sie immer wissen, wo wir stehen.
+            Ein klarer, transparenter Prozess – damit du immer weißt, wo wir stehen.
           </p>
         </div>
 

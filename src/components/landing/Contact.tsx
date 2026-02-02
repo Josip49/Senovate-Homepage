@@ -26,7 +26,7 @@ const Contact = () => {
       setIsSubmitted(true);
       toast({
         title: "Nachricht gesendet!",
-        description: "Wir melden uns innerhalb von 24 Stunden bei Ihnen."
+        description: "Wir melden uns innerhalb von 24 Stunden bei dir."
       });
       setFormData({
         name: "",
@@ -102,7 +102,7 @@ const Contact = () => {
 
             {/* Founder Info */}
             <div className="bg-secondary/50 rounded-2xl p-6">
-              <p className="text-sm text-muted-foreground mb-2">Ihr Ansprechpartner</p>
+              <p className="text-sm text-muted-foreground mb-2">Dein Ansprechpartner</p>
               <p className="font-serif text-xl font-semibold text-foreground">Max Mustermann </p>
               <p className="text-muted-foreground">Co-Founder</p>
             </div>
@@ -118,7 +118,7 @@ const Contact = () => {
                   Vielen Dank!
                 </h3>
                 <p className="text-muted-foreground mb-8">
-                  Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.
+                  Deine Nachricht wurde gesendet. Wir melden uns in Kürze.
                 </p>
                 <Button variant="outline" onClick={() => setIsSubmitted(false)}>
                   Neue Nachricht senden
@@ -128,14 +128,14 @@ const Contact = () => {
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                     Name
                   </label>
-                  <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Ihr vollständiger Name" required className="bg-background/50" />
+                  <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Dein vollständiger Name" required className="bg-background/50" />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                     E-Mail
                   </label>
-                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="ihre@email.de" required className="bg-background/50" />
+                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="deine@email.de" required className="bg-background/50" />
                 </div>
 
                 <div>
@@ -149,7 +149,7 @@ const Contact = () => {
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                     Nachricht
                   </label>
-                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Erzählen Sie uns von Ihrem Projekt..." rows={4} required className="bg-background/50 resize-none" />
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Erzähl uns von deinem Projekt..." rows={4} required className="bg-background/50 resize-none" />
                 </div>
 
                 <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
