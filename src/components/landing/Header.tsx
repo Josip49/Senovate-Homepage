@@ -34,12 +34,20 @@ const Header = () => {
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 flex items-center justify-center">
-            {/* Monitor Icon */}
-            <svg viewBox="0 0 40 40" className="w-10 h-10" fill="none">
-              <rect x="4" y="6" width="32" height="22" rx="3" stroke="currentColor" strokeWidth="2.5" className="text-foreground" />
-              <path d="M16 28h8v4H16z" fill="currentColor" className="text-foreground" />
-              <path d="M12 32h16" stroke="currentColor" strokeWidth="2.5" className="text-foreground" strokeLinecap="round" />
-              <path d="M13 15l4 4-4 4M22 15l4 4-4 4" stroke="currentColor" strokeWidth="2" className="text-accent" strokeLinecap="round" strokeLinejoin="round" />
+            <svg viewBox="0 0 200 200" className="w-10 h-10">
+              {/* Monitor */}
+              <rect x="20" y="30" width="160" height="110" rx="12" fill="hsl(var(--card))" stroke="hsl(var(--foreground))" strokeWidth="6" />
+              {/* Screen */}
+              <rect x="30" y="40" width="140" height="90" rx="6" fill="hsl(var(--background))" />
+              {/* Stand */}
+              <rect x="80" y="140" width="40" height="20" fill="hsl(var(--foreground))" />
+              {/* Base */}
+              <rect x="60" y="160" width="80" height="8" rx="4" fill="hsl(var(--foreground))" />
+              {/* Code brackets */}
+              <path d="M65 75 L50 90 L65 105" stroke="hsl(var(--accent))" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              <path d="M135 75 L150 90 L135 105" stroke="hsl(var(--accent))" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              {/* Slash */}
+              <path d="M110 65 L90 115" stroke="hsl(var(--accent))" strokeWidth="5" strokeLinecap="round" />
             </svg>
           </div>
           <span className="font-serif text-2xl font-bold text-foreground tracking-tight">
