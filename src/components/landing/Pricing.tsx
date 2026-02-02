@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const plans = [
   {
     name: "Bronze",
-    price: "49,99",
+    price: "49",
     tier: "bronze",
     tagline: "Dein kleines digitales Schaufenster.",
     features: [
