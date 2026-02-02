@@ -9,27 +9,27 @@ const faqs = [
   {
     question: "Wie lange dauert die Erstellung meiner Website?",
     answer:
-      "In der Regel benötigen wir 2-4 Wochen für die komplette Umsetzung – abhängig vom Umfang und Ihrer Reaktionszeit bei Feedback. Nach dem Erstgespräch nennen wir Ihnen einen konkreten Zeitrahmen.",
+      "In der Regel benötigen wir 2-4 Wochen für die komplette Umsetzung – abhängig vom Umfang und deiner Reaktionszeit bei Feedback. Nach dem Erstgespräch nennen wir dir einen konkreten Zeitrahmen.",
   },
   {
     question: "Was ist in der monatlichen Gebühr enthalten?",
     answer:
-      "Die monatliche Gebühr deckt Hosting, SSL-Zertifikat, technische Wartung und Sicherheitsupdates ab. Ihre Website bleibt damit immer online, sicher und funktionsfähig.",
+      "Die monatliche Gebühr deckt Hosting, SSL-Zertifikat, technische Wartung und Sicherheitsupdates ab. Deine Website bleibt damit immer online, sicher und funktionsfähig.",
   },
   {
     question: "Kann ich meine Website später erweitern?",
     answer:
-      "Selbstverständlich. Sie können jederzeit in ein größeres Paket wechseln oder einzelne Funktionen hinzubuchen. Wir wachsen gerne mit Ihrem Unternehmen mit.",
+      "Selbstverständlich. Du kannst jederzeit in ein größeres Paket wechseln oder einzelne Funktionen hinzubuchen. Wir wachsen gerne mit deinem Unternehmen mit.",
   },
   {
     question: "Was passiert, wenn ich kündige?",
     answer:
-      "Bei Kündigung können Sie Ihre Website-Daten (Texte, Bilder) exportieren. Die Website selbst wird nach Vertragsende deaktiviert. Es gibt keine versteckten Kosten bei der Kündigung.",
+      "Bei Kündigung kannst du deine Website-Daten (Texte, Bilder) exportieren. Die Website selbst wird nach Vertragsende deaktiviert. Es gibt keine versteckten Kosten bei der Kündigung.",
   },
   {
     question: "Muss ich technisches Wissen mitbringen?",
     answer:
-      "Nein, überhaupt nicht. Wir kümmern uns um alle technischen Aspekte. Sie liefern uns Ihre Inhalte (Texte, Bilder, Logo), und wir machen den Rest.",
+      "Nein, überhaupt nicht. Wir kümmern uns um alle technischen Aspekte. Du lieferst uns deine Inhalte (Texte, Bilder, Logo), und wir machen den Rest.",
   },
   {
     question: "Ist meine Website auch für Suchmaschinen optimiert?",
@@ -49,7 +49,7 @@ const FAQ = () => {
             Häufig gestellte Fragen
           </h2>
           <p className="text-lg text-muted-foreground">
-            Hier finden Sie Antworten auf die wichtigsten Fragen.
+            Hier findest du Antworten auf die wichtigsten Fragen.
           </p>
         </div>
 

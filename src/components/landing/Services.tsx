@@ -4,12 +4,12 @@ const services = [
   {
     icon: Globe,
     title: "Webdesign & Entwicklung",
-    description: "Moderne, professionelle Websites, die Ihre Marke repräsentieren und Besucher zu Kunden machen.",
+    description: "Moderne, professionelle Websites, die deine Marke repräsentieren und Besucher zu Kunden machen.",
   },
   {
     icon: Palette,
     title: "Individuelles Design",
-    description: "Kein Template von der Stange – wir gestalten passend zu Ihrer Unternehmensidentität.",
+    description: "Kein Template von der Stange – wir gestalten passend zu deiner Unternehmensidentität.",
   },
   {
     icon: Smartphone,
@@ -44,7 +44,7 @@ const Services = () => {
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
           <p className="tagline mb-4">Leistungen</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Alles für Ihren Webauftritt
+            Alles für deinen Webauftritt
           </h2>
           <p className="text-lg text-muted-foreground">
             Von der ersten Idee bis zur fertigen Website – wir kümmern uns um alles.

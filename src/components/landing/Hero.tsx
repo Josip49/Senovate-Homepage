@@ -37,7 +37,7 @@ const Hero = () => {
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed opacity-0 animate-fade-up animation-delay-200">
-              Wir bauen Ihre professionelle Website – damit Sie sich auf Ihr Geschäft konzentrieren können.
+              Wir bauen deine professionelle Website – damit du dich auf dein Geschäft konzentrieren kannst.
             </p>
 
             {/* CTAs */}
