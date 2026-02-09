@@ -10,11 +10,14 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               {/* Logo Icon */}
-              <svg viewBox="0 0 40 40" className="w-10 h-10" fill="none">
-                <rect x="4" y="6" width="32" height="22" rx="3" stroke="currentColor" strokeWidth="2.5" className="text-primary-foreground" />
-                <path d="M16 28h8v4H16z" fill="currentColor" className="text-primary-foreground" />
-                <path d="M12 32h16" stroke="currentColor" strokeWidth="2.5" className="text-primary-foreground" strokeLinecap="round" />
-                <path d="M13 15l4 4-4 4M22 15l4 4-4 4" stroke="currentColor" strokeWidth="2" className="text-accent" strokeLinecap="round" strokeLinejoin="round" />
+              <svg viewBox="0 0 200 200" className="w-10 h-10">
+                <rect x="20" y="30" width="160" height="110" rx="12" fill="hsl(var(--card))" stroke="currentColor" strokeWidth="6" />
+                <rect x="30" y="40" width="140" height="90" rx="6" fill="hsl(var(--background))" />
+                <rect x="80" y="140" width="40" height="20" fill="currentColor" />
+                <rect x="60" y="160" width="80" height="8" rx="4" fill="currentColor" />
+                <path d="M65 75 L50 90 L65 105" stroke="hsl(var(--accent))" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <path d="M135 75 L150 90 L135 105" stroke="hsl(var(--accent))" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <path d="M110 65 L90 115" stroke="hsl(var(--accent))" strokeWidth="5" strokeLinecap="round" />
               </svg>
               <span className="font-serif text-2xl font-bold">Senovate</span>
             </div>
