@@ -55,22 +55,22 @@ const Process = () => {
                 <div className="hidden lg:block absolute top-10 left-[60%] w-full h-[2px] bg-gradient-to-r from-border to-transparent" />
               )}
               
-              <div className="bg-card rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-2 border border-border/30 h-full">
+              <div className="bg-card rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-2 border border-border/30 h-full group-hover:bg-foreground group-hover:border-foreground/20">
                 {/* Number Badge */}
-                <div className="absolute -top-4 right-6 bg-foreground text-primary-foreground text-sm font-bold px-4 py-2 rounded-full">
+                <div className="absolute -top-4 right-6 bg-foreground text-primary-foreground text-sm font-bold px-4 py-2 rounded-full group-hover:bg-accent transition-colors duration-500">
                   {step.number}
                 </div>
                 
                 {/* Icon */}
-                <div className={`w-16 h-16 rounded-2xl ${step.color} flex items-center justify-center mb-6`}>
-                  <step.icon className="w-8 h-8" />
+                <div className={`w-16 h-16 rounded-2xl ${step.color} flex items-center justify-center mb-6 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300`}>
+                  <step.icon className="w-8 h-8 group-hover:text-white transition-colors duration-300" />
                 </div>
                 
                 {/* Content */}
-                <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
+                <h3 className="font-serif text-xl font-semibold text-foreground group-hover:text-white mb-3 transition-colors duration-300">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-white/80 transition-colors duration-300">
                   {step.description}
                 </p>
               </div>
