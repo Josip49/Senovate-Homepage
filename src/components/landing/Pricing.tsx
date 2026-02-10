@@ -70,6 +70,17 @@ const Pricing = () => {
           </p>
         </div>
 
+        {/* Setup Fee Notice */}
+        <div className="text-center mb-6">
+          <div className="inline-flex flex-col items-center gap-2 bg-card px-6 py-4 rounded-2xl shadow-sm border border-border/50">
+            <div className="flex items-center gap-3">
+              <span className="text-muted-foreground">Einrichtung:</span>
+              <span className="font-serif text-xl font-bold text-foreground">einmalig 199€</span>
+            </div>
+            <span className="text-sm text-muted-foreground">Alle Preise verstehen sich netto zzgl. MwSt.</span>
+          </div>
+        </div>
+
         {/* Duration Toggle */}
         <div className="flex justify-center mb-6">
           <div className="inline-flex items-center bg-card rounded-full p-1.5 border border-border/50 shadow-sm">
@@ -98,26 +109,15 @@ const Pricing = () => {
 
         {/* Savings hint */}
         {duration === "24" && (
-          <p className="text-center text-sm text-accent font-medium mb-8">
-            Du sparst bis zu 29 % gegenüber dem 12-Monats-Abo!
+          <p className="text-center text-sm text-foreground/70 font-medium mb-12">
+            🎉 Du sparst bis zu 29 % gegenüber dem 12-Monats-Abo!
           </p>
         )}
         {duration === "12" && (
-          <p className="text-center text-sm text-muted-foreground mb-8">
+          <p className="text-center text-sm text-muted-foreground mb-12">
             Wechsle zu 24 Monaten und spare bis zu 240 € pro Jahr.
           </p>
         )}
-
-        {/* Setup Fee Notice */}
-        <div className="text-center mb-12">
-          <div className="inline-flex flex-col items-center gap-2 bg-card px-6 py-4 rounded-2xl shadow-sm border border-border/50">
-            <div className="flex items-center gap-3">
-              <span className="text-muted-foreground">Einrichtung:</span>
-              <span className="font-serif text-xl font-bold text-foreground">einmalig 199€</span>
-            </div>
-            <span className="text-sm text-muted-foreground">Alle Preise verstehen sich netto zzgl. MwSt.</span>
-          </div>
-        </div>
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12">
@@ -188,8 +188,8 @@ const Pricing = () => {
                       <span className="text-foreground/80 font-medium">/mtl.</span>
                     </div>
                     {duration === "24" && (
-                      <p className="text-xs text-accent font-medium mt-2">
-                        Spare {savingPercent} % · {yearlySaving}€ weniger pro Jahr
+                      <p className="text-xs text-foreground/70 font-medium mt-2">
+                        ✓ Spare {savingPercent} % · {yearlySaving}€ weniger pro Jahr
                       </p>
                     )}
                   </div>
