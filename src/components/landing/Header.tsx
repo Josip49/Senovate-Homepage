@@ -50,7 +50,7 @@ const Header = () => {
               <path d="M110 65 L90 115" stroke="hsl(var(--accent))" strokeWidth="5" strokeLinecap="round" />
             </svg>
           </div>
-          <span className="font-serif text-2xl font-bold text-foreground tracking-tight">
+          <span className="text-2xl font-black text-foreground tracking-tight" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
             Senovate
           </span>
         </a>

@@ -19,7 +19,7 @@ const Footer = () => {
                 <path d="M135 75 L150 90 L135 105" stroke="hsl(var(--accent))" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                 <path d="M110 65 L90 115" stroke="hsl(var(--accent))" strokeWidth="5" strokeLinecap="round" />
               </svg>
-              <span className="font-serif text-2xl font-bold">Senovate</span>
+              <span className="text-2xl font-black" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>Senovate</span>
             </div>
             <p className="text-primary-foreground/60 max-w-sm mb-6">
               Professionelle Websites für Unternehmer. Ohne technischen Stress, ohne versteckte Kosten.
