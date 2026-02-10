@@ -49,7 +49,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild className="text-base px-8 py-6">
-                <a href="#preise">Pakete ansehen</a>
+                <a href="#preise">Preise ansehen</a>
               </Button>
             </div>
 
