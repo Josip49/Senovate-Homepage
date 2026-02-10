@@ -45,17 +45,7 @@ const NEEDS_OPTIONS = [
   "Google-Bewertungen / Google-Profil",
 ];
 
-const URGENCY_OPTIONS = [
-  "Sofort / diese Woche",
-  "2–4 Wochen",
-  "1–2 Monate",
-  "Ich informiere mich",
-];
-
-const BUDGET_OPTIONS = [
-  { label: "Abo (49€/Monat) + Setup", value: "abo" },
-  { label: "Weiß ich noch nicht", value: "unsicher" },
-];
+// Removed URGENCY_OPTIONS and BUDGET_OPTIONS - pricing shown dynamically based on selected package
 
 const CONTACT_METHODS = ["WhatsApp", "Anruf", "E-Mail"];
 
@@ -135,8 +125,6 @@ const PackageConfigurator = () => {
   const [phone, setPhone] = useState("");
   const [contactMethod, setContactMethod] = useState("");
   const [needs, setNeeds] = useState<string[]>([]);
-  const [urgency, setUrgency] = useState("");
-  const [budget, setBudget] = useState("");
 
   // Step 4: Preview-Boost + Submit
   const [wantsPreview, setWantsPreview] = useState<"ja" | "nein" | null>(null);
@@ -200,7 +188,7 @@ const PackageConfigurator = () => {
   const canProceedStep1 = selectedPackage !== null;
   const canProceedStep2 = (selectedColor || customColor.trim()) && selectedSubpages.length > 0;
   const canProceedStep3 =
-    firstName.trim() && lastName.trim() && email.trim() && branche && needs.length > 0 && urgency && budget && contactMethod;
+    firstName.trim() && lastName.trim() && email.trim() && branche && needs.length > 0 && contactMethod;
   const canSubmit = dsgvoAccepted;
 
   // ─── Success State ─────────────────────────────────────────
@@ -539,29 +527,23 @@ const PackageConfigurator = () => {
             </div>
           </div>
 
-          {/* Urgency */}
-          <div>
-            <label className="block text-sm font-medium text-foreground mb-1.5">Wie dringend? *</label>
-            <CustomSelect value={urgency} onChange={setUrgency} options={URGENCY_OPTIONS} placeholder="Dringlichkeit wählen…" />
-          </div>
-
-          {/* Budget */}
-          <div>
-            <label className="block text-sm font-medium text-foreground mb-2">Budget / Modell *</label>
-            <div className="grid gap-2">
-              {BUDGET_OPTIONS.map((opt) => (
-                <button
-                  key={opt.value}
-                  type="button"
-                  onClick={() => setBudget(opt.value)}
-                  className={`text-left rounded-xl px-4 py-3 text-sm font-medium border-2 transition-all ${
-                    budget === opt.value ? "border-accent bg-accent/10 text-foreground" : "border-border/50 text-foreground hover:border-border"
-                  }`}
-                >
-                  {opt.label}
-                </button>
-              ))}
+          {/* Pricing Summary */}
+          <div className="bg-secondary/50 rounded-2xl p-5">
+            <h4 className="font-serif text-lg font-bold text-foreground mb-3">Deine Kosten</h4>
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-muted-foreground">Einrichtungsgebühr (einmalig)</span>
+                <span className="font-serif text-lg font-bold text-foreground">199€</span>
+              </div>
+              <div className="h-px bg-border/50" />
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-muted-foreground">{currentPackage?.name}-Abo ({duration} Monate)</span>
+                <span className="font-serif text-lg font-bold text-foreground">
+                  {duration === "24" ? currentPackage?.price24 : currentPackage?.price12}<span className="text-sm font-normal text-foreground/70">/mtl.</span>
+                </span>
+              </div>
             </div>
+            <p className="text-xs text-muted-foreground mt-3">Alle Preise netto zzgl. MwSt.</p>
           </div>
 
           <Button className="w-full" size="lg" disabled={!canProceedStep3} onClick={() => setStep(4)}>
