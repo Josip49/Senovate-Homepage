@@ -120,7 +120,7 @@ const Pricing = () => {
         )}
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch mb-12">
           {plans.map((plan) => {
             const price = duration === "24" ? plan.price24 : plan.price12;
             const monthlySaving = plan.price12 - plan.price24;
@@ -131,7 +131,7 @@ const Pricing = () => {
               <div
                 key={plan.name}
                 className={`relative rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 ${
-                  plan.popular ? "md:scale-105 z-10" : ""
+                  plan.popular ? "ring-2 ring-gold/50 z-10" : ""
                 }`}
               >
                 {/* Card Background */}
@@ -152,7 +152,7 @@ const Pricing = () => {
                   )}
 
                   {/* Card Content */}
-                  <div className="p-8 flex-grow">
+                  <div className="p-8 flex-grow flex flex-col">
                     <h3 className="font-serif text-3xl font-bold text-foreground mb-2">
                       {plan.name}
                     </h3>
@@ -160,8 +160,8 @@ const Pricing = () => {
                       {plan.tagline}
                     </p>
 
-                    {/* Features */}
-                    <ul className="space-y-4 mb-8">
+                    {/* Features - grows to fill space */}
+                    <ul className="space-y-4 flex-grow">
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -171,9 +171,9 @@ const Pricing = () => {
                     </ul>
                   </div>
 
-                  {/* Price Footer */}
+                  {/* Price Footer - always at bottom */}
                   <div
-                    className={`px-8 py-6 ${
+                    className={`px-8 py-6 mt-auto ${
                       plan.tier === "bronze"
                         ? "bg-bronze-card"
                         : plan.tier === "silver"
