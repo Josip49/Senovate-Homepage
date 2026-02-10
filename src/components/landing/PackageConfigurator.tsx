@@ -54,7 +54,6 @@ const URGENCY_OPTIONS = [
 
 const BUDGET_OPTIONS = [
   { label: "Abo (49€/Monat) + Setup", value: "abo" },
-  { label: "Einmalzahlung (Angebot)", value: "einmal" },
   { label: "Weiß ich noch nicht", value: "unsicher" },
 ];
 
