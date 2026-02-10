@@ -9,7 +9,7 @@ const plans = [
     price24: 49,
     price12: 69,
     features: [
-      { text: "One-Pager", included: true },
+      { text: "bis zu 2 Unterseiten", included: true },
       { text: "Responsives Design", included: true },
       { text: "SSL-Zertifikat", included: true },
     ],
