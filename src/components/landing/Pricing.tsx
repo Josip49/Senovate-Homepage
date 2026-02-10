@@ -22,7 +22,7 @@ const plans = [
     price24: 79,
     price12: 99,
     features: [
-      { text: "bis zu 2 Unterseiten", included: true },
+      { text: "bis zu 4 Unterseiten", included: true },
       { text: "Mehr Reichweite", included: true },
       { text: "Social-Media Button", included: true },
       { text: "SSL-Zertifikat", included: true },
@@ -36,7 +36,7 @@ const plans = [
     price24: 99,
     price12: 119,
     features: [
-      { text: "bis zu 4 Unterseiten", included: true },
+      { text: "bis zu 8 Unterseiten", included: true },
       { text: "Social-Media-Button", included: true },
       { text: "Mehr Reichweite", included: true },
       { text: "Fotos von deinem Unternehmen", included: true },
