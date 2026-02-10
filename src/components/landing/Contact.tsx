@@ -1,48 +1,9 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-const Contact = () => {
-  const {
-    toast
-  } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: ""
-  });
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+import { Mail, Phone, MapPin } from "lucide-react";
+import PackageConfigurator from "./PackageConfigurator";
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      toast({
-        title: "Nachricht gesendet!",
-        description: "Wir melden uns innerhalb von 24 Stunden bei dir."
-      });
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: ""
-      });
-    }, 1000);
-  };
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-  return <section id="kontakt" className="section-padding relative overflow-hidden">
+const Contact = () => {
+  return (
+    <section id="kontakt" className="section-padding relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 dots-pattern opacity-20" />
 
@@ -54,7 +15,7 @@ const Contact = () => {
             Dein Anfang
           </h2>
           <p className="text-lg text-muted-foreground">
-            Lass uns über dein Projekt sprechen. Wir freuen uns auf dich.
+            Konfiguriere dein Wunschpaket und wir melden uns bei dir.
           </p>
         </div>
 
@@ -108,64 +69,14 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right Column - Form */}
+          {/* Right Column - Package Configurator */}
           <div className="bg-card rounded-3xl p-8 shadow-sm border border-border/30">
-            {isSubmitted ? <div className="text-center py-12">
-                <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle2 className="w-10 h-10 text-accent" />
-                </div>
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-3">
-                  Vielen Dank!
-                </h3>
-                <p className="text-muted-foreground mb-8">
-                  Deine Nachricht wurde gesendet. Wir melden uns in Kürze.
-                </p>
-                <Button variant="outline" onClick={() => setIsSubmitted(false)}>
-                  Neue Nachricht senden
-                </Button>
-              </div> : <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Name
-                  </label>
-                  <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Dein vollständiger Name" required className="bg-background/50" />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    E-Mail
-                  </label>
-                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="deine@email.de" required className="bg-background/50" />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    Telefon (optional)
-                  </label>
-                  <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+49 123 456789" className="bg-background/50" />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Nachricht
-                  </label>
-                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Erzähl uns von deinem Projekt..." rows={4} required className="bg-background/50 resize-none" />
-                </div>
-
-                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? "Wird gesendet..." : <>
-                      Nachricht senden
-                      <Send className="ml-2 w-4 h-4" />
-                    </>}
-                </Button>
-
-                <p className="text-xs text-muted-foreground text-center">
-                  Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.
-                </p>
-              </form>}
+            <PackageConfigurator />
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Contact;
