@@ -6,9 +6,9 @@ import { Send, CheckCircle2, Upload, X, ChevronLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const PACKAGES = [
-  { id: "bronze", name: "Bronze", maxPages: 2, price: "49€/mtl." },
-  { id: "silver", name: "Silber", maxPages: 4, price: "79€/mtl." },
-  { id: "gold", name: "Gold", maxPages: 8, price: "99€/mtl." },
+  { id: "bronze", name: "Bronze", maxPages: 2, price24: "49€", price12: "69€", tier: "bronze" },
+  { id: "silver", name: "Silber", maxPages: 4, price24: "79€", price12: "99€", tier: "silver" },
+  { id: "gold", name: "Gold", maxPages: 8, price24: "99€", price12: "119€", tier: "gold" },
 ] as const;
 
 const COLOR_THEMES = [
@@ -50,6 +50,7 @@ const PackageConfigurator = () => {
 
   // Step 1: Package
   const [selectedPackage, setSelectedPackage] = useState<PackageId | null>(null);
+  const [duration, setDuration] = useState<"24" | "12">("24");
 
   // Step 2: Color + Subpages
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
@@ -182,44 +183,99 @@ const PackageConfigurator = () => {
             <p className="text-sm text-muted-foreground">Welches Paket passt zu dir?</p>
           </div>
 
-          <div className="grid gap-3">
-            {PACKAGES.map((pkg) => (
+          {/* Duration Toggle */}
+          <div className="flex justify-center mb-2">
+            <div className="inline-flex items-center bg-secondary rounded-full p-1 border border-border/50">
               <button
-                key={pkg.id}
                 type="button"
-                onClick={() => {
-                  setSelectedPackage(pkg.id);
-                  // Reset subpages if switching to a smaller package
-                  const newMax = pkg.maxPages;
-                  if (selectedSubpages.length > newMax) {
-                    const trimmed = selectedSubpages.slice(0, newMax);
-                    setSelectedSubpages(trimmed);
-                    const newImages: Record<string, File[]> = {};
-                    trimmed.forEach((p) => {
-                      if (subpageImages[p]) newImages[p] = subpageImages[p];
-                    });
-                    setSubpageImages(newImages);
-                  }
-                }}
-                className={`w-full text-left rounded-2xl p-5 border-2 transition-all ${
-                  selectedPackage === pkg.id
-                    ? "border-accent bg-accent/5 shadow-sm"
-                    : "border-border/50 bg-background/50 hover:border-border"
+                onClick={() => setDuration("24")}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  duration === "24"
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="font-serif text-lg font-bold text-foreground">
-                      {pkg.name}
-                    </span>
-                    <p className="text-sm text-muted-foreground mt-0.5">
-                      bis zu {pkg.maxPages} Unterseiten
-                    </p>
-                  </div>
-                  <span className="text-sm font-medium text-foreground/80">ab {pkg.price}</span>
-                </div>
+                24 Monate
               </button>
-            ))}
+              <button
+                type="button"
+                onClick={() => setDuration("12")}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  duration === "12"
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                12 Monate
+              </button>
+            </div>
+          </div>
+
+          {duration === "24" && (
+            <p className="text-center text-xs text-foreground/70 font-medium">
+              🎉 Du sparst bis zu 29 % gegenüber dem 12-Monats-Abo!
+            </p>
+          )}
+
+          <div className="grid gap-3">
+            {PACKAGES.map((pkg) => {
+              const price = duration === "24" ? pkg.price24 : pkg.price12;
+              const tierBg =
+                pkg.tier === "bronze"
+                  ? "from-bronze-bg to-bronze-card/20"
+                  : pkg.tier === "silver"
+                  ? "from-silver-bg to-silver-card/30"
+                  : "from-gold-bg to-gold-card/30";
+              const tierBorder =
+                pkg.tier === "bronze"
+                  ? "border-bronze/50"
+                  : pkg.tier === "silver"
+                  ? "border-silver/50"
+                  : "border-gold/50";
+              const tierBorderActive =
+                pkg.tier === "bronze"
+                  ? "border-bronze ring-bronze/30"
+                  : pkg.tier === "silver"
+                  ? "border-silver ring-silver/30"
+                  : "border-gold ring-gold/30";
+
+              return (
+                <button
+                  key={pkg.id}
+                  type="button"
+                  onClick={() => {
+                    setSelectedPackage(pkg.id);
+                    const newMax = pkg.maxPages;
+                    if (selectedSubpages.length > newMax) {
+                      const trimmed = selectedSubpages.slice(0, newMax);
+                      setSelectedSubpages(trimmed);
+                      const newImages: Record<string, File[]> = {};
+                      trimmed.forEach((p) => {
+                        if (subpageImages[p]) newImages[p] = subpageImages[p];
+                      });
+                      setSubpageImages(newImages);
+                    }
+                  }}
+                  className={`w-full text-left rounded-2xl p-5 border-2 transition-all bg-gradient-to-r ${tierBg} ${
+                    selectedPackage === pkg.id
+                      ? `${tierBorderActive} ring-2 shadow-sm`
+                      : `${tierBorder} hover:shadow-md`
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="font-serif text-lg font-bold text-foreground">
+                        {pkg.name}
+                      </span>
+                      <p className="text-sm text-muted-foreground mt-0.5">
+                        bis zu {pkg.maxPages} Unterseiten
+                      </p>
+                    </div>
+                    <span className="font-serif text-xl font-bold text-foreground">{price}<span className="text-sm font-normal text-foreground/70">/mtl.</span></span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
 
           <Button
@@ -403,7 +459,7 @@ const PackageConfigurator = () => {
           {/* Summary */}
           <div className="bg-secondary/50 rounded-xl p-4 space-y-1">
             <p className="text-sm font-medium text-foreground">
-              Paket: <span className="font-bold">{currentPackage?.name}</span>
+              Paket: <span className="font-bold">{currentPackage?.name}</span> · {duration} Monate · {duration === "24" ? currentPackage?.price24 : currentPackage?.price12}/mtl.
             </p>
             <p className="text-sm text-muted-foreground">
               Farbe: {selectedColor || customColor}
