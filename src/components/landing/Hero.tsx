@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import SwipeButton from "@/components/ui/SwipeButton";
 import wavePattern from "@/assets/wave-pattern.jpg";
 
 const Hero = () => {
@@ -41,14 +41,14 @@ const Hero = () => {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up animation-delay-300">
-              <Button size="lg" asChild className="text-base px-8 py-6 group">
-                <a href="#kontakt">
-                  Kostenloses Erstgespräch
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" asChild className="text-base px-8 py-6">
+            <div className="flex flex-col gap-4 opacity-0 animate-fade-up animation-delay-300">
+              <SwipeButton
+                onSwipeComplete={() => {
+                  document.getElementById("kontakt")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="max-w-sm"
+              />
+              <Button variant="outline" size="lg" asChild className="text-base px-8 py-6 max-w-sm w-full">
                 <a href="#preise">Preise ansehen</a>
               </Button>
             </div>
